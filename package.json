@@ -1,0 +1,39 @@
+{
+  "name": "server-ts-init",
+  "version": "1.0.3",
+  "description": "A lightweight boilerplate for creating a TypeScript-based server. This template provides a solid foundation for building RESTful APIs or microservices using TypeScript and Node.js.",
+  "main": "bin/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "node-serv-ts",
+    "create-server",
+    "ts",
+    "typescript",
+    "server",
+    "express",
+    "node",
+    "arbab",
+    "boilerplate",
+    "api",
+    "rest-api",
+    "microservices",
+    "server",
+    "development",
+    "typescript-boilerplate",
+    "eslint",
+    "prettier",
+    "dotenv",
+    "backend",
+    "web-server",
+    "npm-package"
+  ],
+  "bin": {
+    "server-ts-init": "./bin/index.js"
+  },
+  "author": "arbab",
+  "license": "ISC"
+}
