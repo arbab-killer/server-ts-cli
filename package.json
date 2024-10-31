@@ -1,6 +1,6 @@
 {
   "name": "server-ts-init",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A lightweight boilerplate for creating a TypeScript-based server. This template provides a solid foundation for building RESTful APIs or microservices using TypeScript and Node.js.",
   "main": "bin/index.js",
   "type": "module",
@@ -35,5 +35,8 @@
     "server-ts-init": "./bin/index.js"
   },
   "author": "arbab",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ora": "^8.1.0"
+  }
 }

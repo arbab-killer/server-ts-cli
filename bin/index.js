@@ -3,6 +3,7 @@
 import { exec } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
+import ora from "ora";
 
 const projectStructure = {
   src: [
@@ -34,6 +35,7 @@ const createFile = (filePath, content = "") => {
 };
 
 // Main function to create project structure
+const spinner = ora("Creating project structure...").start();
 const createProjectStructure = (projectName) => {
   const rootPath = path.join(process.cwd(), projectName);
 
@@ -130,6 +132,8 @@ console.log("Server is running on http://localhost:" + PORT);
   console.log(
     `Project  structure has been created successfully! Server is running 👇👇👇👇👇👇`
   );
+  spinner.succeed("Project structure created successfully!");
+  const installSpinner = ora("Installing dependencies...").start();
   console.log("install package ........");
   exec(
     `cd ${rootPath} && npm install  && git init && git add . && git commit -m "initial commit"`,
@@ -137,25 +141,32 @@ console.log("Server is running on http://localhost:" + PORT);
       console.log("initial git repository ................");
       if (error) {
         console.log(`error: ${error.message}`);
+        installSpinner.fail("Failed to install dependencies.");
         return;
       } else {
         console.log(
           "Install dependencies successfully\nRun the command To start the Server\n cd " +
             projectName +
+            projectName +
             "\n'npm run dev' "
         );
+        installSpinner.succeed("Dependencies installed successfully.");
       }
     }
   );
 };
 
 // Get the project name from the command line arguments
-const projectName = process.argv[2];
-
-if (projectName) {
-  createProjectStructure(projectName);
+const args = process.argv.slice(2);
+const firstArg = args[0];
+if (firstArg === "--hi") {
+  spinner.succeed(
+    "I am The CLI tool for to create a typescript server using nodejs\ni am develop by Arbab for to meke essey development "
+  );
+} else if (firstArg) {
+  createProjectStructure(firstArg);
 } else {
-  console.error(
+  spinner.fail(
     "Please specify a project name. Usage: arbab create-server.ts <project-name>"
   );
 }
