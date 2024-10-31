@@ -30,6 +30,13 @@ server-ts-init <project>
 
 ```
 
+##### Chack the tool is install successfully
+
+```
+server-ts-init -hi
+//in return get some text, that mean the tool is install successfully install
+```
+
 ### Folder Stucture
 
 ```
