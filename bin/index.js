@@ -65,6 +65,7 @@ const projectStructure = {
         `,
     },
     { ".gitignore": `node_modules\n.env` },
+    { "readme.md": "readme file" },
   ],
 };
 
