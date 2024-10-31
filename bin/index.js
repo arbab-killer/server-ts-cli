@@ -16,7 +16,7 @@ const projectStructure = {
     "config",
     "index.ts", // The entry point
   ],
-  rootFiles: [".env", "package.json", "tsconfig.json"],
+  rootFiles: [".env", "package.json", "tsconfig.json", ".gitignore"],
 };
 
 // Helper function to create a directory if it doesn't exist
@@ -95,6 +95,7 @@ console.log("Server is running on http://localhost:" + PORT);
         },
         devDependencies: {
           "@types/express": "^5.0.0",
+          nodemon: "^3.1.7",
           "@types/node": "^22.8.2",
           "ts-node": "^10.9.2",
           typescript: "^5.6.3",
@@ -124,22 +125,28 @@ console.log("Server is running on http://localhost:" + PORT);
       2
     )
   );
+
+  createFile(path.join(rootPath, ".gitignore"), "node_modules\n.env\n");
   console.log(
     `Project  structure has been created successfully! Server is running 👇👇👇👇👇👇`
   );
   console.log("install package ........");
-  exec(`cd ${rootPath} && npm install  `, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      return;
-    } else {
-      console.log(
-        "Install dependencies successfully\nRun the command To start the Server\n cd " +
-          projectName +
-          "\n'npm run dev' "
-      );
+  exec(
+    `cd ${rootPath} && npm install  && git init && git add . && git commit -m "initial commit"`,
+    (error, stdout, stderr) => {
+      console.log("initial git repository ................");
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      } else {
+        console.log(
+          "Install dependencies successfully\nRun the command To start the Server\n cd " +
+            projectName +
+            "\n'npm run dev' "
+        );
+      }
     }
-  });
+  );
 };
 
 // Get the project name from the command line arguments

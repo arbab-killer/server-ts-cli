@@ -12,25 +12,44 @@ A lightweight boilerplate for creating a TypeScript-based server. This template 
 
 ## Getting Started
 
+##### To Use Without Install
+
 ```
-server.ts-init/│
-├── src/
-│   ├── controllers/     # Route controllers
-│   ├── routes/          # API routes
-│   ├── middlewares/     # Custom middlewares
-│   ├── models/          # Data models
-│   ├── config/          # Configuration files
-│   └── index.ts         # Entry point
-│
-├── .env                 # Environment variables
-├── .eslintrc.js         # ESLint configuration
-├── .prettierrc          # Prettier configuration
-├── package.json         # Project metadata and dependencies
-└── tsconfig.json        # TypeScript configuration 
+npx server-ts-init <project name>
 ```
 
+##### For install package globly
 
-### Prerequisites
+```
+npm install -g server-ts-init
+```
+
+```
+//Write command when you install globly
+server-ts-init <project>
+
+```
+
+### Folder Stucture
+
+```
+<Project name>/
+  ├── src/
+  │   ├── controllers/     # Route controllers
+  │   ├── routes/          # API routes
+  │   ├── middlewares/     # Custom middlewares
+  │   ├── models/          # Data models
+  │   ├── config/          # Configuration files
+  │   └── index.ts         # Entry point
+  │
+  ├── .env                 # Environment variables
+  ├── .eslintrc.js         # ESLint configuration
+  ├── .prettierrc          # Prettier configuration
+  ├── package.json         # Project metadata and dependencies
+  └── tsconfig.json        # TypeScript configuration
+```
+
+### Prerequests
 
 - Node.js (version 14 or higher)
 - npm (Node Package Manager)
@@ -40,5 +59,5 @@ server.ts-init/│
 1. Clone the repository or download the boilerplate:
 
    ```bash
-   git clone https://github.com/arbab-killer/typescript-server
+   git clone https://github.com/arbab-killer/server-ts-cli
    ```
